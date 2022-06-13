@@ -21,9 +21,11 @@ template.innerHTML = `
   <div>
     <h3 id="name"></h3>
     <div class="details">
-      <p>Precio:<slot name="precio-normal"></p>
-      <p>Oferta:<slot name="precio-oferta"></p>
+      <p><span id="normal"></span></p>
+      <p><span id="sale"></span></p>
       <h3 id="rating"></h3>
+      <h3 id="percent"></h3>
+      <p>Rating:<slot name="rating"></p>
 
     </div>
   </div>
@@ -38,21 +40,39 @@ class SellItem extends HTMLElement{
     this.shadowRoot.querySelector('#name').innerText = this.getAttribute('name');   
 
     this.shadowRoot.querySelector('img').src = this.getAttribute('image');
-    this.shadowRoot.querySelector('#rating').innerText = this.getAttribute('rating');   
-
+    this.shadowRoot.querySelector('#normal').innerText = "Precio:" + this.getAttribute('normal');   
+    
+    if (this.getAttribute('sale')){
+      this.shadowRoot.querySelector('#sale').innerText = "Oferta:" + this.getAttribute('sale');
+      this.shadowRoot.querySelector('#percent').innerText = this.percentGet
+    }
 
  } 
 // component attributes
  connectedCallback(){
-   this.name = this.getAttribute("name")
-   this.rating = this.getAttribute("rating")
-
+   this.$name = this.getAttribute("name")
+   this.$normal = this.getAttribute("normal")
+   this.$sale = this.getAttribute("sale")
    this.render();
  }
 
- render(){
-   this.h3;
+ get normal(){
+    return this.getAttribute("normal")
+ }
 
+ get sale(){
+  return this.getAttribute("sale")
+}
+
+
+ get percentGet(){
+  if (this.sale){
+    return "-"+((1-parseInt(this.sale)/parseInt(this.normal))*100|0)+"%"
+  }
+}
+
+ render(){
+  this.percent
  }
 }
 window.customElements.define('sell-item', SellItem);
