@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Components G10
+    </title>
+    <style>
+      h3{
+        font-family: Verdana;
+        color: purple;
+      }
+      .movie-list{
+        display:flex;
+        gap: 10px;
+      }
+    </style>
+  
+</head>
+<body>
+    <h3>Nuestras Peliculas</h3>
+    <div class="movie-list">
+      <sell-item 
+        name="Speed Racer" 
+        image="img/image1.jpg" 
+        rating="4.2"
+      >
+        <div slot="precio-normal">990</div>
+        <div slot="precio-oferta">690</div>
+      </sell-item>
+
+      <sell-item 
+        name="Pacific Rim"
+        image="img/image2.jpg"
+        rating="4.1" 
+      >
+      <div slot="precio-normal">590</div>
+      <div slot="precio-oferta">390</div>
+      </sell-item>
+    </div>
+     <!-- scripts -->
+  <script src="sell-item.js"></script> 
+    
+</body>
+</html>
