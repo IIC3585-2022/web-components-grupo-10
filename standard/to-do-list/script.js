@@ -1,3 +1,3 @@
-import { AppModule } from "./src/listModule.js";
+import { ToDoModule } from "./src/listModule.js";
 
-AppModule.defineElements();
+ToDoModule.defineElements();
