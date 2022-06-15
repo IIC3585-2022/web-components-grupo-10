@@ -1,4 +1,4 @@
-export class TodoListDataService {
+export let TodoListDataService {
     static state = [];
 
     static initilalizeState(state) {

@@ -57,9 +57,6 @@ export class ListComponent extends HTMLElement {
         let todoItem = document.createElement("todo-item");
         todoItem.setAttribute("starter", item)
 
-        ListComponent.todoIdCount = ListComponent.todoIdCount ?? 0;
-        todoItem.id = ListComponent.todoIdCount++;
-
         //Agregamos el todo como hijo del elemento todo-items
         this.todoItems.appendChild(todoItem);
     }
@@ -69,12 +66,9 @@ export class ListComponent extends HTMLElement {
 
         if (this.$prompt){
             this.addStart(this.$prompt)
-        } else{
+        } else {
             //Se crea un elemento con nuestro webcomponent todo-item
             let todoItem = document.createElement("todo-item");
-
-            ListComponent.todoIdCount = ListComponent.todoIdCount ?? 0;
-            todoItem.id = ListComponent.todoIdCount++;
 
             //Agregamos el todo como hijo del elemento todo-items
             this.todoItems.appendChild(todoItem);

@@ -44,11 +44,6 @@ export class TodoItemComponent extends HTMLElement {
             this.contentInput.value = "Task " + this.id;
             this.contentDisplay.innerHTML = this.contentInput.value;
         }
-
-        TodoListDataService.AddTodoItem(
-            this.id,
-            this.contentInput.value,
-            false
         );
         
         // Si hago click en el contentDisplay, se ejecuta editContent, que nos permite editar contenido
@@ -102,7 +97,6 @@ export class TodoItemComponent extends HTMLElement {
         this.contentDisplay.hidden = false;
 
         //Funcion que actualiza nuestro estado en modulo de datos js
-        TodoListDataService.UpdateTodoItem(this.id, this.contentInput.value);
     }
 
     deleteTodoItem(e) {
@@ -110,7 +104,6 @@ export class TodoItemComponent extends HTMLElement {
         let todoItem = this;
         if (todoItem.parentNode && todoItem.parentNode.matches(".todo-items")) {
             // Elimina el elemento en los datos
-            TodoListDataService.DeleteTodoItem(todoItem.id);
             // Elimina el nodo hijo del DOM
             todoItem.parentNode.removeChild(todoItem);
         }
