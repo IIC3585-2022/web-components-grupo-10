@@ -1,3 +1,3 @@
-import { AppModule } from "./src/appModule.js";
+import { AppModule } from "./src/listModule.js";
 
 AppModule.defineElements();
