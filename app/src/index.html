@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo</title>
+
+    <link rel="icon" type="image/png" href="./img/icons/favicon.png" />
+
+    <meta name="theme-color" content="#2A3443" />
+    <meta name="description" content="Tutorial app." />
+
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="./img/icons/icon-144x144.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-title" content="TutorialApp" />
+
+    <script>
+      if (!window.customElements) {
+        document.write('<!--');
+      }
+    </script>
+    <script src="./vendor/custom-elements-es5-adapter.js"></script>
+    <style>
+      h3{
+        text-align: center;
+        font-family: Verdana;
+        color: purple;
+      }
+      .movie-list{
+        display:flex;
+        justify-content:center ;
+
+        gap: 10px;
+      }
+      .title{
+        color: purple;
+        font-style: italic;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    </style>
+    <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+  </head>
+
+  <body>
+    <header><h1>Web Components G10</h1></header>
+
+    <main>
+      <h1 class="title">Native Sell Item</h1>
+
+      <h3>Nuestras Peliculas</h3>
+
+      <div class="movie-list">
+          <sell-item 
+            name="Speed Racer" 
+            image="img/icons/image1.jpg" 
+            normal="690"
+          >        
+            <div slot="rating">3.9</div>
+
+          </sell-item>
+        <sell-item
+          name="Pacific Rim"
+          image="img/icons/image2.jpg"
+          normal="590"
+          rating="4.1" 
+          sale="390"
+
+        >
+          <div slot="rating">4.1</div>
+
+        </sell-item>
+
+      </div>
+
+      <h1 class="title">Todo Lit</h1>
+
+
+      <todo-view title="Tareas" initialTodos="comer,lavar" prompt="Añade una Tarea"></todo-view>
+      <todo-view title="Tasks" initialTodos="eat,pray,love" prompt="Add a new task"></todo-view>
+      
+      <h1 class="title">Native Todo</h1>
+
+
+      <todo-list item1="primero" item2="segundo" item3="tercero" title="Todo List" prompt="Prompt"></todo-list>
+      <todo-list item1="Ein" item2="zwei" item3="drei" title="Aufgabenliste"></todo-list>
+      <todo-list item1="Uno" item2="Due" item3="Tre" ></todo-list>
+        
+    </main>
+    <script src="./vendor/webcomponents-loader.js"></script>
+
+  </body>
+</html>
