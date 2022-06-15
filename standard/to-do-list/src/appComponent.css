@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .todo-list-container {
@@ -30,7 +30,6 @@
     border-style: none;
     background: var(--primary-color);
     box-shadow: var(--shadow);
-    transition: all 500ms;
 }
 
 .add-todo-item-btn:hover {

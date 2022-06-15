@@ -14,8 +14,8 @@ template.innerHTML = `
     max-width:300px !important;
   }
   h3{color:blue}
-
 </style>
+
 <div class="sell-item">
   <img/>
   <div>

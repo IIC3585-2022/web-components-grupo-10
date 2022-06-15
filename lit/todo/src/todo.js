@@ -35,15 +35,26 @@ class TodoView extends LitElement {
     margin-bottom: 20px;
     }
     .todoItem {
+      background: #f1f1f1;
       display: flex;
       justify-content: space-between;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      width: 400px;
+
     }
     button {
-        border: 3px solid black;
-        border-radius: 50%;
-        background-color: white;
-        font-weight: bold;
-        cursor: pointer;
+      padding: 5px;
+      margin-right: 5px;
+      border-radius: 3px;
+      font-weight: 500;
+      font-size: 1.2rem;
+      border-style: none;
+      background: #0000ff;
+      box-shadow:  rgba(3, 8, 20, 0.2) 0px 0.15rem 0.5rem;
+      color: #f1f1f1;
+      transition: background 500ms;
     }
     `
   }
